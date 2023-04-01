@@ -104,6 +104,7 @@ cache/
 plugged/
 logs/
 log/
+*.backup
 *.log
 **/dump.rdb
 **/.DS_Store
