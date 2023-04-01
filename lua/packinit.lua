@@ -88,6 +88,9 @@ require('packer').startup({
         require('pack/nvim-lines').config()
         use { 'yaocccc/nvim-lines.lua', config = "require('pack/nvim-lines').setup()" }
 
+        -- modern Vim Tex
+        use 'lervag/vimtex'
+
         -- 部分个人自写插件
         require('pack/yaocccc').config()                                               -- yaocccc/* 共用一个config
         use { 'yaocccc/vim-comment', cmd = '*ToggleComment' }                          -- 注释插件

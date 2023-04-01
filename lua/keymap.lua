@@ -12,7 +12,7 @@ G.map({
     { 'n', '\\',          ':nohlsearch<CR>', { noremap = true } },
 
     -- 快速删除
-    { 'n', '<bs>',        '"_ciw',   { noremap = true } },
+    -- { 'n', '<bs>',        '"_ciw',   { noremap = true } },
     { 'i', '<c-h>',       'col(".") == col("$") ? \'<esc>"_db"_xa\' : \'<esc>"_db"_xi\'', { noremap = true, expr = true } },
 
     -- ,打断
@@ -146,6 +146,9 @@ G.map({
     { 'v', 'T',           ':call v:lua.MagicToggleHump(v:true)<CR>', { noremap = true, silent = true } },
     { 'v', 't',           ':call v:lua.MagicToggleHump(v:false)<CR>', { noremap = true, silent = true } },
 })
+
+-- vimtex
+G.cmd("let maplocalleader = ','")
 
 -- 光标在$ 0 ^依次跳转
 function MagicMove()
