@@ -62,8 +62,7 @@
         "staticcheck": true
     },
     "git.enableGutters": true,
-    "volar.takeOverMode.enabled": true,
     "Lua.telemetry.enable": true,
-    "snippets.ultisnips.pythonPrompt": false,
-    "coc.preferences.extensionUpdateCheck": "daily"
+    "volar.takeOverMode.enabled": false,
+    "volar.autoCreateQuotes": true
 }

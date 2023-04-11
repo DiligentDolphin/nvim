@@ -30,7 +30,7 @@ function M.config()
 
         ["@statement"] = { fg = 166 };
         ["@special"] = { fg = 172 };
-        ["@comment"] = { fg = 71, sp = 'italic' };
+        ["@comment"] = { fg = 71, italic = true };
         ["@include"] = { fg = 1 };
         ["@type"] = { fg = 179 };
         ["@type.builtin"] = { fg = 150 };
@@ -58,8 +58,18 @@ function M.config()
         { 'n', 'H', ':TSHighlightCapturesUnderCursor<CR>', { silent = true, noremap = true } },
         { 'n', 'R', ':write | edit | TSBufEnable highlight<CR>', { silent = true, noremap = true } },
     })
+
     -- some custom highlights
-    G.cmd('match Todo /TODO\\(:.*\\)*/')
+    G.hi({
+        Todo = { fg = 234, bg = 38, bold = true };
+        TodoText = { fg = 38, bg = 'NONE', bold = true };
+        Note = { fg = 234, bg = 78, bold = true };
+        NoteText = { fg = 78, bg = 'NONE', bold = true };
+    })
+    G.cmd([[call matchadd('Todo', 'TODO:\{0,1\}')]])
+    G.cmd([[call matchadd('TodoText', 'TODO:\{0,1\}\zs.*')]])
+    G.cmd([[call matchadd('Note', 'NOTE:\{0,1\}')]])
+    G.cmd([[call matchadd('NoteText', 'NOTE:\{0,1\}\zs.*')]])
 end
 
 function M.setup()
