@@ -63,7 +63,5 @@
     },
     "git.enableGutters": true,
     "Lua.telemetry.enable": true,
-    "volar.takeOverMode.enabled": false,
-    "volar.autoCreateQuotes": true,
     "snippets.ultisnips.pythonPrompt": false
 }
