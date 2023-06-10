@@ -91,6 +91,9 @@ require('packer').startup({
         -- modern Vim Tex
         use 'lervag/vimtex'
 
+        -- TextMate-style snippets for Neovim
+        use 'SirVer/ultisnips'
+
         -- 部分个人自写插件
         require('pack/yaocccc').config()                                               -- yaocccc/* 共用一个config
         use { 'yaocccc/vim-comment', cmd = '*ToggleComment' }                          -- 注释插件
