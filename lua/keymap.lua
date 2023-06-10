@@ -101,6 +101,9 @@ G.map({
     { 'i', '<m-O>',       '<Esc>O',           { noremap = true } },
     { 'n', '<m-d>',       '"_diw',            { noremap = true } },
     { 'n', '<m-r>',       '"_ciw',            { noremap = true } },
+    { 'v', '<m-x>',       '<Esc>:CocList<cr>',{ noremap = true } },
+    { 'i', '<m-x>',       '<Esc>:CocList<cr>',{ noremap = true } },
+    { 'n', '<m-x>',       ':CocList<cr>',     { noremap = true } },
 
     -- windows: sp 上下窗口 sv 左右分屏 sc关闭当前 so关闭其他 s方向切换
     { 'n', 'sv',          ':vsp<cr><c-w>w',   { noremap = true } },
