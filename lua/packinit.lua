@@ -94,6 +94,10 @@ require('packer').startup({
         -- TextMate-style snippets for Neovim
         use 'SirVer/ultisnips'
 
+        use { 'jbyuki/venn.nvim', cmd = 'VBox', config = function()
+            G.map({ { 'v', '<space>', ':VBox<cr>', { noremap = true, silent = true } } })
+        end }
+
         -- 部分个人自写插件
         require('pack/yaocccc').config()                                               -- yaocccc/* 共用一个config
         use { 'yaocccc/vim-comment', cmd = '*ToggleComment' }                          -- 注释插件
@@ -102,6 +106,7 @@ require('packer').startup({
         use { 'yaocccc/nvim-hlchunk', event = { 'CursorMoved', 'CursorMovedI' } }      -- 高亮{}范围
         use { 'yaocccc/vim-surround', event = 'ModeChanged' }                          -- 操作成对的 ""  {}  [] 等的插件
         use { 'yaocccc/nvim-foldsign', event = 'CursorHold', config = 'require("nvim-foldsign").setup()' } -- signcolumn显示折叠信息
+        use { 'yaocccc/nvim-hl-mdcodeblock.lua', after = 'nvim-treesitter', config = "require('pack/markdown').setup_hlcodeblock()" }
     end,
     config = {
         git = { clone_timeout = 120, depth = 1 },

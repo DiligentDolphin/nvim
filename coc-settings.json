@@ -21,10 +21,12 @@
     "tabnine.priority": 80,
     "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
     "pairs.enableBackspace": true,
-    "translator.engines": ["youdao"],
+    "translator.engines": ["youdao", "google"],
     "tsserver.trace.server": "messages",
     "tsserver.enableJavascript": true,
-    "tsserver.enable": true,
+    "tsserver.enable": false,
+    "volar.takeOverMode.enabled": true,
+    "volar.autoCreateQuotes": true,
     "pyright.inlayHints.enable": false,
     "git.addedSign.hlGroup": "GitGutterAdd",
     "git.changedSign.hlGroup": "GitGutterChange",
@@ -49,7 +51,7 @@
             "default": true
         }
     ],
-    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.6/clangd_15.0.6/bin/clangd",
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/16.0.2/clangd_16.0.2/bin/clangd",
     "prettier": {
         "tabWidth": 4,
         "printWidth": 160,
@@ -64,4 +66,5 @@
     "git.enableGutters": true,
     "Lua.telemetry.enable": true,
     "snippets.ultisnips.pythonPrompt": false
+    "@nomicfoundation/coc-solidity.telemetry": true
 }
