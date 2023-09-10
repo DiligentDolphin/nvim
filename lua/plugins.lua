@@ -33,7 +33,7 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	
 	-- Coc
-	use {'neoclide/coc.nvim', config = 'npm ci'}
+	use {'neoclide/coc.nvim', run = "npm ci"}
 
 	-- Simple plugins can be specified as strings
 	use 'rstacruz/vim-closer'

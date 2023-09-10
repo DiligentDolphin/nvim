@@ -1,3 +1,3 @@
-vim.cmd('source ~/.config/nvim/.exrc')
-require("opt_coc")
 require("plugins")
+require("opt_coc")
+vim.cmd('source ~/.config/nvim/.exrc')
