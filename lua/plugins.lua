@@ -17,6 +17,16 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+-- Reload configurations if we modify plugins.lua
+-- Hint
+--    <afile> - replace with the filename of the fuffer being manipulated
+vim.cmd([[
+	augroup packer_user_config
+	autocmd!
+	autocmd BufWritePost plugins.lua source <afile> | PackerSync
+	augroup end
+]])
+
 -- Packer init script
 local packer = require('packer')
 packer.util = require('packer.util')
@@ -98,4 +108,39 @@ return require('packer').startup(function(use)
 
 	-- You can alias plugin names
 	use {'dracula/vim', as = 'dracula'}
+
+	-- BlockBegin(coc-extensions)
+	use {'fannheyward/coc-pyright', run = 'yarn install --frozen-lockfile'}
+	use {'josa42/coc-docker', run = 'yarn install --frozen-lockfile'}
+	use {'josa42/coc-lua', run = 'yarn install --frozen-lockfile'}
+	use {'neoclide/coc-css', run = 'yarn install --frozen-lockfile'}
+	use {'neoclide/coc-git', run = 'yarn install --frozen-lockfile'}
+	use {'neoclide/coc-highlight', run = 'yarn install --frozen-lockfile'}
+	use {'neoclide/coc-lists', run = 'yarn install --frozen-lockfile'}
+	use {'neoclide/coc-prettier', run = 'yarn install --frozen-lockfile'}
+	use {'neoclide/coc-snippets', run = 'yarn install --frozen-lockfile'}
+	use {'neoclide/coc-tsserver', run = 'yarn install --frozen-lockfile'}
+	use {'neoclide/coc-yaml', run = 'yarn install --frozen-lockfile'}
+	use {'yaegassy/coc-black-formatter', run = 'yarn install --frozen-lockfile'}
+	use {'yaegassy/coc-blade', run = 'yarn install --frozen-lockfile'}
+	use {'yaegassy/coc-laravel', run = 'yarn install --frozen-lockfile'}
+	use {'yaegassy/coc-mypy', run = 'yarn install --frozen-lockfile'}
+	use {'yaegassy/coc-pydocstring', run = 'yarn install --frozen-lockfile'}
+	use {'yaegassy/coc-pylsp', run = 'yarn install --frozen-lockfile'}
+
+	-- BlockBegin(DataBase tools)
+	use {'tpope/vim-dadbod', run = 'yarn install --frozen-lockfile'}
+	use {'tpope/vim-dotenv', run = 'yarn install --frozen-lockfile'}
+	use {'kristijanhusak/vim-dadbod-ui', run = 'yarn install --frozen-lockfile'}
+	use {'kristijanhusak/vim-dadbod-completion', run = 'yarn install --frozen-lockfile'}
+
+	-- LSP
+	use { 'williamboman/mason.nvim' }
+	use { 'williamboman/mason-lspconfig.nvim' }
+
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if packer_bootstrap then
+		require('packer').sync()
+	end
 end)

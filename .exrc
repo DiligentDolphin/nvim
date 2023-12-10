@@ -1,9 +1,10 @@
 set noautochdir
-set cdhome
 set helplang=en
 set laststatus=3
 set smartcase
 set startofline
 set virtualedit=block
-set window=40
+set wildoptions=fuzzy
+nnoremap ; :
+nnoremap \ <ESC>:nohlsearch<CR>
 " vim: set ft=vim :
