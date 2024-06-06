@@ -12,6 +12,9 @@ vim.api.nvim_create_autocmd('FileType', {
       -- the connection to the same LSP server.
       root_dir = vim.fs.root(ev.buf, {'setup.py', 'pyproject.toml'}),
     })
-  end,
+    if vim.g.vscode then
+      vim.lsp.inlay_hint.enable(false)
+    end
+  end
 })
 -- vim:ts=2:sw=2:et:
