@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { 
     "folke/which-key.nvim",
+    cond = not vim.g.vscode,
     event = "VeryLazy",
     init = function()
       vim.o.timeout = true
