@@ -7,4 +7,3 @@ keymap.set( 'c', '<C-B>', '<Left>' )
 keymap.set( 'c', '<Esc>b', '<S-Left>' )
 keymap.set( 'c', '<Esc>f', '<S-Right>' )
 keymap.set( 'c', '<C-D>', '<Del>' )
--- vim:tw=2:sw=2:et:
