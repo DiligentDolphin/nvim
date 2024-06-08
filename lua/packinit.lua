@@ -14,6 +14,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 -- Load and setup
 require("lazy").setup({
+	{
+		"folke/lazy.nvim",
+		opts = {
+			checker = {
+				-- automatically check for plugin updates
+				enabled = true,
+			},
+		}
+	},
 	{ 
 		"folke/which-key.nvim",
 		cond = not vim.g.vscode,
