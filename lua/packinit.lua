@@ -23,7 +23,7 @@ require("lazy").setup({
 			},
 		}
 	},
-	{ 
+	{
 		"folke/which-key.nvim",
 		cond = not vim.g.vscode,
 		event = "VeryLazy",
@@ -34,27 +34,30 @@ require("lazy").setup({
 		opts = {
 		},
 	},
-	{ 
+	{
 		"folke/neoconf.nvim",
 		cmd = "Neoconf",
 		opts = {},
 	},
-	{ 
+	{
 		"folke/neodev.nvim",
 	},
 	{
 		"neovim/nvim-lspconfig",
-		config = function ()
+		config = function()
 			local lspconfig = require("lspconfig")
 
-			lspconfig.pylsp.setup{}
-			lspconfig.lua_ls.setup{}
-		end
+			lspconfig.pylsp.setup {}
+			lspconfig.lua_ls.setup {}
+		end,
+		keys = {
+			{ "<leader>lbf", "<cmd>lua vim.lsp.buf.format()<cr>" },
+		},
 	},
-	{ 
-		"nvim-treesitter/nvim-treesitter", 
-		build = ":TSUpdate" ,
-		config = function ()
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function()
 			local configs = require("nvim-treesitter.configs")
 
 			configs.setup({
@@ -65,12 +68,12 @@ require("lazy").setup({
 				indent = { enable = true },
 			})
 
-			vim.opt.foldmethod="expr"
-			vim.opt.foldexpr="nvim_treesitter#foldexpr()"
-			vim.opt.foldenable=false
+			vim.opt.foldmethod = "expr"
+			vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+			vim.opt.foldenable = false
 		end
 	},
-	{ 
+	{
 		'numToStr/Comment.nvim',
 		opts = {
 			-- add any options here
