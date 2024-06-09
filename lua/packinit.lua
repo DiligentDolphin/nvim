@@ -37,9 +37,19 @@ require("lazy").setup({
 	{ 
 		"folke/neoconf.nvim",
 		cmd = "Neoconf",
+		opts = {},
 	},
 	{ 
 		"folke/neodev.nvim",
+	},
+	{
+		"neovim/nvim-lspconfig",
+		config = function ()
+			local lspconfig = require("lspconfig")
+
+			lspconfig.pylsp.setup{}
+			lspconfig.lua_ls.setup{}
+		end
 	},
 	{ 
 		"nvim-treesitter/nvim-treesitter", 
