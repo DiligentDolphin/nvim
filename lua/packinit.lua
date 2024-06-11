@@ -88,4 +88,8 @@ require("lazy").setup({
 		},
 		config = true
 	},
+	{
+		'Exafunction/codeium.vim',
+		event = 'BufEnter',
+	},
 })
