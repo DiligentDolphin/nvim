@@ -91,5 +91,6 @@ require("lazy").setup({
 	{
 		'Exafunction/codeium.vim',
 		event = 'BufEnter',
+		cond = not vim.g.vscode,  -- use vscode plugin, otherwise will conflict
 	},
 })
