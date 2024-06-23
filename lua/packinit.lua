@@ -44,14 +44,24 @@ require("lazy").setup({
 	},
 	{
 		"neovim/nvim-lspconfig",
+		settings = {
+			Lua = {
+				diagnostics = {
+					-- Get the language server to recognize the `vim` global
+					globals = { "vim" },
+				}
+			},
+		},
 		config = function()
-			local lspconfig = require("lspconfig")
+			local configs = require 'lspconfig.configs'
 
-			lspconfig.pylsp.setup {}
-			lspconfig.lua_ls.setup {}
+			configs.pylsp.setup {}
+			configs.lua_ls.setup {}
 		end,
 		keys = {
-			{ "<leader>lbf", "<cmd>lua vim.lsp.buf.format()<cr>" },
+			{ "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>" },
+			{ "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>" },
+			{ "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<cr>" },
 		},
 	},
 	{
@@ -91,6 +101,8 @@ require("lazy").setup({
 	{
 		'Exafunction/codeium.vim',
 		event = 'BufEnter',
-		cond = not vim.g.vscode,  -- use vscode plugin, otherwise will conflict
+		cond = not vim.g.vscode, -- use vscode plugin, otherwise will conflict
 	},
 })
+
+-- vim: ts=2 sts=2 sw=2
