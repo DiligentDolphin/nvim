@@ -3,4 +3,4 @@ require('packinit') -- 插件配置
 require('keymap')   -- 按键配置
 require('autocmd')  -- 自动命令配置
 
--- vim: st=2 sts=2 sw=2
+-- vim: ts=2 sts=2 sw=2
