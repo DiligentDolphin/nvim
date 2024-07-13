@@ -146,6 +146,22 @@ require("lazy").setup({
 		config = true
 	},
 	{
+		'kdheepak/lazygit.nvim',
+		cmd = {
+			'LazyGit',
+			'LazyGitConfig',
+			'LazyGitCurrentFile',
+			'LazyGitFilter',
+			'LazyGitFilterCurrentFile',
+		},
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+		},
+		keys = {
+			{ '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
+		},
+	},
+	{
 		'Exafunction/codeium.vim',
 		event = 'BufEnter',
 		cond = not vim.g.vscode, -- use vscode plugin, otherwise will conflict
