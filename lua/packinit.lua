@@ -166,6 +166,16 @@ require("lazy").setup({
 		event = 'BufEnter',
 		cond = not vim.g.vscode, -- use vscode plugin, otherwise will conflict
 	},
+	{
+		'junegunn/fzf.vim',
+		cmd = { 'FZF', 'Files' },
+		dependencies = {
+			'junegunn/fzf',
+		},
+		keys = {
+			{ '<leader>ff', '<cmd>Files<cr>', desc = 'Files' },
+		},
+	},
 })
 
 -- vim: ts=2 sts=2 sw=2
