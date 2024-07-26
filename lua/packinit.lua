@@ -36,14 +36,19 @@ require("lazy").setup({
 	},
 	{
 		"folke/neoconf.nvim",
+		cond = not vim.g.vscode,
 		cmd = "Neoconf",
 		opts = {},
 	},
 	{
 		"folke/neodev.nvim",
+		cond = not vim.g.vscode,
+		opts = {},
 	},
 	{
 		"neovim/nvim-lspconfig",
+		cond = not vim.g.vscode,
+		dependencies = { "folke/neoconf.nvim" },
 		settings = {
 			Lua = {
 				diagnostics = {
@@ -113,6 +118,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
+		cond = not vim.g.vscode,
 		build = ":TSUpdate",
 		config = function()
 			local configs = require("nvim-treesitter.configs")
@@ -132,12 +138,14 @@ require("lazy").setup({
 	},
 	{
 		'numToStr/Comment.nvim',
+		cond = not vim.g.vscode,
 		opts = {
 			-- add any options here
 		},
 	},
 	{
 		'NeogitOrg/neogit',
+		cond = not vim.g.vscode,
 		dependencies = {
 			'nvim-lua/plenary.nvim',
 			'sindrets/diffview.nvim',
@@ -147,6 +155,7 @@ require("lazy").setup({
 	},
 	{
 		'kdheepak/lazygit.nvim',
+		cond = not vim.g.vscode,
 		cmd = {
 			'LazyGit',
 			'LazyGitConfig',
@@ -163,11 +172,12 @@ require("lazy").setup({
 	},
 	{
 		'Exafunction/codeium.vim',
-		event = 'BufEnter',
 		cond = not vim.g.vscode, -- use vscode plugin, otherwise will conflict
+		event = 'BufEnter',
 	},
 	{
 		'junegunn/fzf.vim',
+		cond = not vim.g.vscode,
 		cmd = { 'FZF', 'Files' },
 		dependencies = {
 			'junegunn/fzf',
