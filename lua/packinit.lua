@@ -48,6 +48,7 @@ require("lazy").setup({
 	{
 		"neovim/nvim-lspconfig",
 		cond = not vim.g.vscode,
+		cmd = { "LspStart" },
 		dependencies = { "folke/neoconf.nvim" },
 		settings = {
 			Lua = {
@@ -73,10 +74,6 @@ require("lazy").setup({
 					}
 				}
 			}
-
-			lspconfig.pyright.setup {}
-
-			lspconfig.jedi_language_server.setup {}
 
 			lspconfig.lua_ls.setup {
 				on_init = function(client)
