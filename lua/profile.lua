@@ -6,5 +6,6 @@ opt.hidden = true
 opt.smartcase = true
 opt.smartindent = true
 opt.smarttab = true
+opt.autochdir = true
 
 -- vim: ts=2 sts=2 sw=2
