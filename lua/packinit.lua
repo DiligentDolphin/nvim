@@ -124,7 +124,7 @@ require("lazy").setup({
 			local configs = require("nvim-treesitter.configs")
 
 			configs.setup({
-				ensure_installed = { "bash", "c", "lua", "vim", "vimdoc", "python", "query", "javascript", "html" },
+				ensure_installed = { "bash", "c", "jsonc", "lua", "vim", "vimdoc", "python", "query", "javascript", "html" },
 				sync_install = false,
 				highlight = { enable = true },
 				incremental_selection = { enable = true },
