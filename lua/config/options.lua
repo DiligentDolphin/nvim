@@ -3,7 +3,7 @@
 -- Add any additional options here
 local is_windows = function()
   local is_windows_p = false
-  if vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1 then
+  if (vim.fn.has("win64") == 1) or (vim.fn.has("win32") == 1) or (vim.fn.has("win16") == 1) then
     is_windows_p = true
   end
   return is_windows_p
