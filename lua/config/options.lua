@@ -1,10 +1,19 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
-local function is_windows()
-  return vim.fn.has("win64") or vim.fn.has("win32") or vim.fn.has("win16")
+local is_windows = function()
+  local is_windows_p = false
+  if vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1 then
+    is_windows_p = true
+  end
+  return is_windows_p
 end
 
-if is_windows() and vim.fn.executable("pwsh") then
-  vim.o.shell = "pwsh"
+local set_shell = function()
+  local is_windows_p = is_windows()
+  local has_pwsh_p = vim.fn.executable("pwsh")
+  if is_windows_p and has_pwsh_p then
+    vim.o.shell = "pwsh"
+  end
 end
+set_shell()
